@@ -10,15 +10,17 @@ import java.io.Serializable;
 @Table( name = "MESSAGES" )
 public class Message implements Serializable {
     private int id;
-    private User origin;
-    private User recipient;
+    private String type;
+    private String origin;
+    private String recipient;
     @Column(name = "timestamp", columnDefinition = "DATETIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
     private String content;
 
     public Message() {}
-    public Message(User origin, User recipient, Date timestamp, String content) {
+    public Message(String type, String origin, String recipient, Date timestamp, String content) {
+        this.type = type;
         this.origin = origin;
         this.recipient = recipient;
         this.timestamp = timestamp;
@@ -32,15 +34,19 @@ public class Message implements Serializable {
 
     public void setId(int id) { this.id = id; }
 
-    public User getOrigin() {
+    public String getType() { return type; }
+
+    public void setType(String type) { this.type = type; }
+
+    public String getOrigin() {
         return origin;
     }
 
-    public void setOrigin(User origin) { this.origin = origin; }
+    public void setOrigin(String origin) { this.origin = origin; }
 
-    public User getRecipient() { return recipient; }
+    public String getRecipient() { return recipient; }
 
-    public void setRecipient(User recipient) { this.recipient = recipient; }
+    public void setRecipient(String recipient) { this.recipient = recipient; }
 
     public Date getTimestamp() {
         return timestamp;

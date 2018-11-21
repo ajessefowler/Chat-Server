@@ -49,10 +49,10 @@ public class User implements Serializable {
         Map<String, List<Message>> messagesByUser = new HashMap<>();
 
         for (Message message : this.messages) {
-            if (!messagesByUser.containsKey(message.getOrigin().getUsername())) {
-                messagesByUser.put(message.getOrigin().getUsername(), new ArrayList<>());
+            if (!messagesByUser.containsKey(message.getOrigin())) {
+                messagesByUser.put(message.getOrigin(), new ArrayList<>());
             }
-            messagesByUser.get(message.getOrigin().getUsername()).add(message);
+            messagesByUser.get(message.getOrigin()).add(message);
         }
 
         return messagesByUser;
@@ -60,6 +60,6 @@ public class User implements Serializable {
 
     @Transient
     public List<Message> getMessagesByUsername(String username) {
-        return this.messages.stream().filter(message -> message.getOrigin().getUsername() == username).collect(Collectors.toList());
+        return this.messages.stream().filter(message -> message.getOrigin() == username).collect(Collectors.toList());
     }
 }

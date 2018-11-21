@@ -1,14 +1,15 @@
 package com.chatapi.base;
 
 import java.util.*;
+import javax.ejb.Singleton;
 import javax.websocket.*;
 import javax.websocket.server.*;
 import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
 
-@ServerEndpoint(value = "/chat", decoders = MessageDecoder.class, encoders = MessageEncoder.class)
+@Singleton
+@ServerEndpoint(value = "/chat", decoders = { MessageDecoder.class }, encoders = { MessageEncoder.class })
 public class Endpoint {
-    Map<String, Session> sessions = new ConcurrentHashMap<>();
+    private static Map<String, Session> sessions = new HashMap<>();
 
     @OnOpen
     public void onOpen(Session session) throws IOException {
@@ -16,17 +17,20 @@ public class Endpoint {
     }
 
     @OnMessage
-    public void onMessage(Session session, String message) {
-        System.out.println("New message: " + message);
-        /*if (!sessions.containsKey(message.getOrigin().getUsername())) {
-            sessions.put(message.getOrigin().getUsername(), session);
+    public void onMessage(Session session, Message message) {
+        if (message.getType().equals("connect")) {
+            sessions.put(message.getOrigin(), session);
+            Message confirmConnection = new Message("connected", message.getOrigin(), message.getRecipient(), new Date(), null);
+            session.getAsyncRemote().sendObject(confirmConnection);
         }
 
-        if (sessions.containsKey(message.getRecipient().getUsername())) {
-            sessions.get(message.getRecipient().getUsername()).getAsyncRemote().sendObject(message);
-        } else {
-            // Send notification to recipient
-        }*/
+        if (message.getType().equals("chat")) {
+            if (sessions.containsKey(message.getRecipient())) {
+                sessions.get(message.getRecipient()).getAsyncRemote().sendObject(message);
+            } else {
+                // Send notification to recipient
+            }
+        }
     }
 
     @OnClose
@@ -36,6 +40,6 @@ public class Endpoint {
 
     @OnError
     public void onError(Session session, Throwable exception) {
-        System.out.println(exception.getStackTrace());
+        exception.printStackTrace();
     }
 }

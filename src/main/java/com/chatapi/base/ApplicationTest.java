@@ -13,12 +13,9 @@ import java.util.Date;
 public class ApplicationTest {
     public static void main(String[] args) {
         User user1 = new User("jesse", "test1");
-        User user2 = new User("emma", "test2");
+        User user2 = new User("test", "test2");
         addUser(user1);
         addUser(user2);
-        Date date = new Date();
-        Message message1 = new Message(user1, user2, date, "test message");
-        addMessage(message1);
     }
 
     public static SessionFactory getSessionFactory() {
@@ -44,6 +41,6 @@ public class ApplicationTest {
         session.save(message);
         session.getTransaction().commit();
         session.close();
-        System.out.println("Created message to " + message.getRecipient().getUsername() + ": " + message.getContent());
+        System.out.println("Created message to " + message.getRecipient() + ": " + message.getContent());
     }
 }
