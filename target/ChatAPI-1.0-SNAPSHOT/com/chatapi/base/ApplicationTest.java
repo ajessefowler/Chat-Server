@@ -1,17 +1,15 @@
 package com.chatapi.base;
 
-import com.chatapi.api.AuthenticationService;
+import com.chatapi.authentication.AuthenticationService;
 import com.chatapi.authentication.PasswordEncryptionService;
-import com.chatapi.authentication.models.Token;
 import com.chatapi.authentication.models.User;
 
-import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 public class ApplicationTest {
     public static void main(String[] args) {
-        DatabaseManager dbManager = new DatabaseManager();
+        DatabaseService dbManager = new DatabaseService();
         PasswordEncryptionService encryptService = new PasswordEncryptionService();
         AuthenticationService authService = new AuthenticationService();
 
