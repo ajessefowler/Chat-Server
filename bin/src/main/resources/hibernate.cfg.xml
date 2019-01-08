@@ -22,7 +22,7 @@
 			update
 		</property>
 
-		<mapping class="com.chatapi.base.User"/>
-		<mapping class="com.chatapi.base.Message"/>
+		<mapping class="com.chatapi.authentication.models.User"/>
+		<mapping class="com.chatapi.base.models.Message"/>
 	</session-factory>
 </hibernate-configuration>

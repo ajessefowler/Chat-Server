@@ -1,0 +1,14 @@
+com/chatapi/api/RegistrationService.class
+com/chatapi/authentication/models/User.class
+com/chatapi/authentication/models/Token.class
+com/chatapi/api/AuthenticationService.class
+com/chatapi/base/ApplicationTest.class
+com/chatapi/api/Endpoint.class
+com/chatapi/api/AuthenticationService$AuthenticationFilter$1.class
+com/chatapi/authentication/interfaces/Secured.class
+com/chatapi/base/DatabaseManager.class
+com/chatapi/api/AuthenticationService$AuthenticationFilter.class
+com/chatapi/base/MessageEncoder.class
+com/chatapi/base/MessageDecoder.class
+com/chatapi/authentication/PasswordEncryptionService.class
+com/chatapi/base/models/Message.class
