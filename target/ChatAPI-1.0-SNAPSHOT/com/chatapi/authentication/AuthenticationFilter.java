@@ -37,7 +37,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
 
         // Extract the token from the Authorization header
         String token = authorizationHeader.substring(AUTHENTICATION_SCHEME.length()).trim();
-        String username = dbManager.getToken(token).getUser();
+        String username = dbManager.getTokenByTokenString(token).getUser();
 
         final SecurityContext currentSecurityContext = requestContext.getSecurityContext();
         requestContext.setSecurityContext(new SecurityContext() {
@@ -88,10 +88,10 @@ public class AuthenticationFilter implements ContainerRequestFilter {
                         .build());
     }
 
-    private void validateToken(String token) throws Exception {
+    private void validateToken(String user) throws Exception {
         // Check if the token was issued by the server and if it's not expired
         // Throw an Exception if the token is invalid
-        if (dbManager.getToken(token) == null) {
+        if (dbManager.getToken(user) == null) {
             throw new Exception("invalid token");
         }
     }

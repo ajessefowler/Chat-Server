@@ -10,7 +10,7 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/chatapp
+			jdbc:mysql://localhost:3306/flarechat
 		</property>
 		<property name="hibernate.connection.username">
 			root

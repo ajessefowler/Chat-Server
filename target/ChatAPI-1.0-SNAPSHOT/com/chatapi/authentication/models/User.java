@@ -1,7 +1,6 @@
 package com.chatapi.authentication.models;
 
 import com.chatapi.base.models.Message;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.*;
@@ -11,8 +10,13 @@ import java.io.Serializable;
 @Entity
 @Table( name = "USERS" )
 public class User implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String username;
+    private String firstName;
+    private String lastName;
+    private String email;
     @Lob
     private byte[] password;
     @Lob
@@ -21,6 +25,7 @@ public class User implements Serializable {
     private List<Message> messages;
 
     public User() {}
+
     public User(String username, byte[] password, byte[] salt) {
         this.username = username;
         this.password = password;
@@ -28,9 +33,16 @@ public class User implements Serializable {
         this.messages = new ArrayList<>();
     }
 
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy="increment")
+    public User(String username, String firstName, String lastName, String email, byte[] password, byte[] salt) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.salt = salt;
+        this.messages = new ArrayList<>();
+    }
+
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
@@ -40,6 +52,18 @@ public class User implements Serializable {
     }
 
     public void setUsername(String username) { this.username = username; }
+
+    public String getFirstName() { return firstName; }
+
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
 
     public byte[] getPassword() { return password; }
 

@@ -1,27 +1,26 @@
 package com.chatapi.authentication.models;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table( name = "TOKENS" )
 public class Token implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String token;
     private String user;
+    @Lob
+    private byte[] tokenKey;
 
     public Token() {}
-    public Token(String token, String user) {
+    public Token(String token, String user, byte[] key) {
         this.token = token;
         this.user = user;
+        this.tokenKey = key;
     }
 
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy="increment")
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
@@ -33,4 +32,8 @@ public class Token implements Serializable {
     public String getUser() { return user; }
 
     public void setUser(String user) { this.user = user; }
+
+    public  byte[] getKey() { return tokenKey; }
+
+    public void setKey(byte[] key) { this.tokenKey = key; }
 }

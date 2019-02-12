@@ -1,7 +1,5 @@
 package com.chatapi.base.models;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.io.Serializable;
@@ -9,6 +7,8 @@ import java.io.Serializable;
 @Entity
 @Table( name = "MESSAGES" )
 public class Message implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String type;
     private String origin;
@@ -17,19 +17,19 @@ public class Message implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
     private String content;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public Message() {}
-    public Message(String type, String origin, String recipient, Date timestamp, String content) {
+    public Message(String type, String origin, String recipient, String content) {
         this.type = type;
         this.origin = origin;
         this.recipient = recipient;
-        this.timestamp = timestamp;
         this.content = content;
+        this.timestamp = new Date();
+        this.status = Status.CREATED;
     }
 
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy="increment")
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
@@ -59,4 +59,8 @@ public class Message implements Serializable {
     }
 
     public void setContent(String content) { this.content = content; }
+
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
 }

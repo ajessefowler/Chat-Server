@@ -1,13 +1,14 @@
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/MessageDecoder.java
+/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/api/CORSFilter.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/ApplicationTest.java
-/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/api/AuthenticationEndpoint.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/api/ChatEndpoint.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/models/Message.java
+/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/EncryptionService.java
+/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/api/AuthenticationController.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/DatabaseService.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/AuthenticationFilter.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/interfaces/Secured.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/MessageEncoder.java
+/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/models/Status.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/models/Token.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/models/User.java
-/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/AuthenticationService.java
-/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/PasswordEncryptionService.java

@@ -1,37 +1,23 @@
 package com.chatapi.base;
 
-import com.chatapi.authentication.AuthenticationService;
-import com.chatapi.authentication.PasswordEncryptionService;
-import com.chatapi.authentication.models.User;
+import com.chatapi.api.AuthenticationController;
+import com.chatapi.authentication.EncryptionService;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
+import javax.ws.rs.core.Response;
 
 public class ApplicationTest {
     public static void main(String[] args) {
         DatabaseService dbManager = new DatabaseService();
-        PasswordEncryptionService encryptService = new PasswordEncryptionService();
-        AuthenticationService authService = new AuthenticationService();
+        EncryptionService encryptService = new EncryptionService();
+        AuthenticationController authController = new AuthenticationController();
 
-        try {
-            byte[] salt1 = encryptService.generateSalt();
-            byte[] salt2 = encryptService.generateSalt();
+        authController.registerUser("new", "newpass");
 
-            User user1 = new User("jesse", encryptService.getEncryptedPassword("test", salt1), salt1);
-            User user2 = new User("test", encryptService.getEncryptedPassword("test2", salt2), salt2);
+        //Response response = authController.authenticateUser("new", "newpass");
 
-            dbManager.addUser(user1);
-            dbManager.addUser(user2);
+        //String jws = response.getEntity().toString();
+        //System.out.println(jws);
 
-            //String tokenString = authService.authenticateUser("jesse", "test");
-            //System.out.println(tokenString);
-
-            //System.out.println("Retrieved user " + dbManager.getUser("jesse").getUsername());
-            //System.out.println("Retrieved token " + dbManager.getToken("jesse").getToken() + " for user " + dbManager.getToken("jesse").getUser());
-        } catch (NoSuchAlgorithmException e) {
-            System.out.println(e.getStackTrace());
-        } catch (InvalidKeySpecException e) {
-            System.out.println(e.getStackTrace());
-        }
+        //System.out.println(authController.tokenIsActive("new", jws).getEntity().toString());
     }
 }
