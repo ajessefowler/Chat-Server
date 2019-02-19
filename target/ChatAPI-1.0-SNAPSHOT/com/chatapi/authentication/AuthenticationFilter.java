@@ -1,6 +1,7 @@
 package com.chatapi.authentication;
 
 import com.chatapi.authentication.interfaces.Secured;
+import com.chatapi.authentication.models.User;
 import com.chatapi.base.DatabaseService;
 
 import javax.annotation.Priority;
@@ -23,6 +24,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     private static final String AUTHENTICATION_SCHEME = "Bearer";
 
     private DatabaseService dbManager = new DatabaseService();
+    private JWTService webTokenService = new JWTService();
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
@@ -37,7 +39,8 @@ public class AuthenticationFilter implements ContainerRequestFilter {
 
         // Extract the token from the Authorization header
         String token = authorizationHeader.substring(AUTHENTICATION_SCHEME.length()).trim();
-        String username = dbManager.getTokenByTokenString(token).getUser();
+        User user = dbManager.getTokenByTokenString(token).getUser();
+        String username = user.getUsername();
 
         final SecurityContext currentSecurityContext = requestContext.getSecurityContext();
         requestContext.setSecurityContext(new SecurityContext() {
@@ -65,7 +68,9 @@ public class AuthenticationFilter implements ContainerRequestFilter {
 
         try {
             // Validate the token
-            validateToken(token);
+            // Check if the token was issued by the server and if it's not expired
+            // Throw an Exception if the token is invalid
+            webTokenService.validateJWS(username, token);
         } catch (Exception e) {
             abortWithUnauthorized(requestContext);
         }
@@ -86,13 +91,5 @@ public class AuthenticationFilter implements ContainerRequestFilter {
                         .header(HttpHeaders.WWW_AUTHENTICATE,
                                 AUTHENTICATION_SCHEME + " realm=\"" + REALM + "\"")
                         .build());
-    }
-
-    private void validateToken(String user) throws Exception {
-        // Check if the token was issued by the server and if it's not expired
-        // Throw an Exception if the token is invalid
-        if (dbManager.getToken(user) == null) {
-            throw new Exception("invalid token");
-        }
     }
 }

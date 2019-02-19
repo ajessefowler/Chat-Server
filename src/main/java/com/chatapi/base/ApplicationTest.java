@@ -11,12 +11,15 @@ public class ApplicationTest {
         EncryptionService encryptService = new EncryptionService();
         AuthenticationController authController = new AuthenticationController();
 
-        authController.registerUser("new", "newpass");
+        //authController.registerUser("admin4", "admin4");
 
-        //Response response = authController.authenticateUser("new", "newpass");
+        try {
+            Response response = authController.authenticateUser("admin4", "admin4");
 
-        //String jws = response.getEntity().toString();
-        //System.out.println(jws);
+            System.out.println(response.getEntity().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         //System.out.println(authController.tokenIsActive("new", jws).getEntity().toString());
     }

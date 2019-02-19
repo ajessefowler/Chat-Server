@@ -2,6 +2,7 @@ package com.chatapi.base;
 
 import com.chatapi.authentication.models.Token;
 import com.chatapi.authentication.models.User;
+import com.chatapi.authentication.models.UserCredentials;
 import com.chatapi.base.models.Message;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,7 +17,7 @@ import javax.persistence.criteria.*;
 public class DatabaseService {
     public static SessionFactory getSessionFactory() {
         Configuration configuration = new Configuration().configure();
-        configuration.addAnnotatedClass(User.class).addAnnotatedClass(Message.class).addAnnotatedClass(Token.class);
+        configuration.addAnnotatedClass(UserCredentials.class).addAnnotatedClass(User.class).addAnnotatedClass(Message.class).addAnnotatedClass(Token.class);
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
         SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
         return sessionFactory;
@@ -33,7 +34,7 @@ public class DatabaseService {
         return query.setMaxResults(1).uniqueResult();
     }
 
-    public Token getToken(String user) {
+    public Token getToken(User user) {
         Session session = getSessionFactory().openSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Token> cr = cb.createQuery(Token.class);
@@ -55,25 +56,36 @@ public class DatabaseService {
         return query.setMaxResults(1).uniqueResult();
     }
 
-    public void deleteToken(Token token) {
+    public Session deleteToken(Token token) {
+        User user = token.getUser();
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(token);
         session.getTransaction().commit();
+        System.out.println("Deleted token for user " + user.getUsername());
+        return session;
+    }
+
+    public void deleteUser(User user) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(user);
+        session.getTransaction().commit();
         session.close();
-        System.out.println("Deleted token for user " + token.getUser());
+        System.out.println("Deleted user " + user.getUsername());
+    }
+
+    public void deleteUserByUsername(String username) {
+        User user = getUser(username);
+        deleteUser(user);
     }
 
     public void addToken(Token token) {
-        String username = token.getUser();
-        // If a token already exists for the user, delete the existing token
-        if (getToken(username) != null) {
-            deleteToken(getToken(username));
-        }
-
+        User user = token.getUser();
+        String username = user.getUsername();
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(token);
+        session.persist(token);
         session.getTransaction().commit();
         session.close();
         System.out.println("Created token for user " + username);
@@ -82,16 +94,25 @@ public class DatabaseService {
     public void addUser(User user) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(user);
+        session.persist(user);
         session.getTransaction().commit();
         session.close();
         System.out.println("Created user " + user.getUsername());
     }
 
+    public void updateUser(User user) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        session.merge(user);
+        session.getTransaction().commit();
+        session.close();
+        System.out.println("Updated user " + user.getUsername());
+    }
+
     public void addMessage(Message message) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(message);
+        session.persist(message);
         session.getTransaction().commit();
         session.close();
         System.out.println("Created message to " + message.getRecipient() + ": " + message.getContent());

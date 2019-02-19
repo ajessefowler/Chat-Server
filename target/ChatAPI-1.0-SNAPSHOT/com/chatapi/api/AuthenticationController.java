@@ -1,18 +1,18 @@
 package com.chatapi.api;
 
 import com.chatapi.authentication.EncryptionService;
+import com.chatapi.authentication.JWTService;
 import com.chatapi.authentication.models.Token;
 import com.chatapi.authentication.models.User;
+import com.chatapi.authentication.models.UserCredentials;
 import com.chatapi.base.DatabaseService;
-
-import io.jsonwebtoken.*;
-import io.jsonwebtoken.security.Keys;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.security.Key;
-import java.util.UUID;
+import java.io.Serializable;
 
 @Path("/authentication")
 public class AuthenticationController {
@@ -29,12 +29,16 @@ public class AuthenticationController {
             byte[] salt = encryptService.generateSalt();
             byte[] encryptedPassword = encryptService.getEncryptedPassword(password, salt);
 
-            User user = new User(username, encryptedPassword, salt);
+            User user = new User(username);
+            UserCredentials credentials = new UserCredentials(encryptedPassword, salt);
+            user.setCredentials(credentials);
+            credentials.setUser(user);
+
             dbService.addUser(user);
 
             return "Successfully created user " + username;
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+            e.printStackTrace();
             return e.getMessage();
         }
     }
@@ -43,19 +47,30 @@ public class AuthenticationController {
     @Path("login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response authenticateUser(@FormParam("username") String username, @FormParam("password") String password) {
+    public Response authenticateUser(@FormParam("username") String username, @FormParam("password") String attemptedPassword) {
+        User retrievedUser = dbService.getUser(username);
+
         try {
-            User retrievedUser = dbService.getUser(username);
+            byte[] retrievedPassword = retrievedUser.getCredentials().getPassword();
+            byte[] retrievedSalt = retrievedUser.getCredentials().getSalt();
 
             // Authenticate the user using the credentials provided
-            if (encryptService.authenticate(password, retrievedUser.getPassword(), retrievedUser.getSalt())) {
-                String token = webTokenService.buildAndPersistJWS(username);
-                return Response.ok(token).build();
+            if (encryptService.authenticate(attemptedPassword, retrievedPassword, retrievedSalt)) {
+                Token token = webTokenService.createJWS(username);
+                retrievedUser.setToken(token);
+
+                // Send user object to json to be able to include token string
+                ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+                String userJson = ow.writeValueAsString(retrievedUser);
+
+                return Response.status(Response.Status.OK).entity(userJson).build();
             } else {
                 return Response.status(Response.Status.FORBIDDEN).build();
             }
         } catch (Exception e) {
             return Response.status(Response.Status.FORBIDDEN).build();
+        } finally {
+            retrievedUser.setToken(null);
         }
     }
 
@@ -66,47 +81,5 @@ public class AuthenticationController {
     public Response tokenIsActive(@FormParam("username") String user, @FormParam("jws") String jws) {
         String isActive = String.valueOf(webTokenService.validateJWS(user, jws));
         return Response.ok(isActive).header("Access-Control-Allow-Origin", "*").build();
-    }
-
-    // Service to build and validate JSON Web Tokens
-    private class JWTService {
-        private String buildAndPersistJWS(String username) {
-            Key key = generateSecretKey();
-            byte[] keyArray = key.getEncoded();
-            String id = UUID.randomUUID().toString();
-
-            String jws = Jwts.builder().setId(id).setSubject(username).signWith(key).compact();
-
-            dbService.addToken(new Token(id, username, keyArray));
-
-            return jws;
-        }
-
-        private boolean validateJWS(String username, String jws) {
-            try {
-                Key key = Keys.hmacShaKeyFor(dbService.getToken(username).getKey());
-                assert Jwts.parser().setSigningKey(key).parseClaimsJws(jws).getBody().getSubject().equals(username);
-                return true;
-            } catch (JwtException e) {
-                // Display exception
-                return false;
-            }
-        }
-
-        private Key generateSecretKey() {
-            return Keys.secretKeyFor(SignatureAlgorithm.HS256);
-        }
-    }
-
-    private class LoginResponse {
-        String user;
-        String jws;
-
-        private LoginResponse() {}
-
-        private LoginResponse(String user, String jws) {
-            this.user = user;
-            this.jws = jws;
-        }
     }
 }

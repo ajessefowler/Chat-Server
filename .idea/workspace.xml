@@ -2,71 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb14db79-5e78-44c4-bd81-83443ae9625c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_api_0_10_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_impl_0_10_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_jackson_0_10_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_2_1_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/api/CORSFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/UserCredentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/api/AuthenticationControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/authentication/EncryptionServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Chat-Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Chat-Server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/PasswordEncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/JWTService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/base/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/base/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT-classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT-classes.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/api/AuthenticationEndpoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/api/ChatEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/api/ChatEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/AuthenticationFilter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/AuthenticationFilter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/PasswordEncryptionService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/models/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/models/Token.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/authentication/models/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/base/ApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/base/ApplicationTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/base/DatabaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/base/DatabaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/base/models/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/com/chatapi/base/models/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/api/AuthenticationEndpoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/api/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/api/ChatEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/api/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/api/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/PasswordEncryptionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/EncryptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/models/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/models/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/authentication/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/base/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/base/ApplicationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/base/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/base/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/base/models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatAPI-1.0-SNAPSHOT/com/chatapi/base/models/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/chat.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/api/AuthenticationEndpoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/api/ChatEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/api/ChatEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/chat.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/chat.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/AuthenticationFilter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/AuthenticationFilter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/PasswordEncryptionService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/models/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/models/Token.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/authentication/models/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/base/ApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/base/ApplicationTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/base/DatabaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/base/DatabaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chatapi/base/models/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chatapi/base/models/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/DatabaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
-              <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+            <state relative-caret-position="320">
+              <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+            <state relative-caret-position="99">
+              <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +88,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="633">
+              <caret line="140" column="21" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            <state relative-caret-position="225">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,8 +123,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="150">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#694#695#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/JWTService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1572#1573#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/UserCredentials.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,34 +174,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state relative-caret-position="176">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1318#1319#0" expanded="true" />
+                <element signature="e#1349#1350#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,8 +192,8 @@
       <list>
         <option value="Interface" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -180,6 +201,10 @@
     <findStrings>
       <find>getoken</find>
       <find>gettoken</find>
+      <find>createJWS</find>
+      <find>gettokenby</find>
+      <find>gettok</find>
+      <find>getto</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,25 +228,31 @@
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/RegistrationEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/TokenEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/PasswordEncryptionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/JWTService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/TokenController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/CORSFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Status.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/api/AuthenticationControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/EncryptionServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/authentication/EncryptionServiceTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/UserCredentials.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/DatabaseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/JWTService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/ResponseWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationController.java" />
       </list>
     </option>
@@ -247,6 +278,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,24 +380,56 @@
             <path>
               <item name="Chat-Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Chat-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chat-Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chat-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chat-Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chat-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chat-Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chat-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Chat-Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chat-Server" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549998844516" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550593414954" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -378,7 +443,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ApplicationTest">
     <configuration name="ApplicationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chatapi.base.ApplicationTest" />
       <module name="Chat-Server" />
@@ -392,9 +457,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EncryptionServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chat-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EncryptionServiceTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ApplicationTest" />
+        <item itemvalue="JUnit.EncryptionServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -407,6 +487,14 @@
       <updated>1546724984162</updated>
     </task>
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="EncryptionServiceTest - 2019.02.13 at 14h 41m 32s.xml">
+      <configuration name="EncryptionServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EncryptionServiceTest - 2019.02.13 at 14h 42m 15s.xml">
+      <configuration name="EncryptionServiceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,24 +509,24 @@
     <frame x="0" y="25" width="1400" height="833" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4871795" visible="true" weight="0.27761415" />
-      <window_info id="Structure" order="1" sideWeight="0.51282054" side_tool="true" weight="0.27761415" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48490945" visible="true" weight="0.281296" />
+      <window_info id="Structure" order="1" sideWeight="0.5150905" side_tool="true" weight="0.281296" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5090543" side_tool="true" weight="0.26730487" />
+      <window_info id="Favorites" order="6" sideWeight="0.51282054" side_tool="true" weight="0.27761415" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.32928476" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.32928476" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32928476" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32928476" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50073636" side_tool="true" weight="0.32928476" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32928476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -449,24 +537,24 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4871795" visible="true" weight="0.27761415" />
-      <window_info id="Structure" order="1" sideWeight="0.51282054" side_tool="true" visible="true" weight="0.27761415" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48490945" visible="true" weight="0.281296" />
+      <window_info id="Structure" order="1" sideWeight="0.5150905" side_tool="true" weight="0.281296" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5090543" side_tool="true" weight="0.26730487" />
+      <window_info id="Favorites" order="6" sideWeight="0.51282054" side_tool="true" weight="0.27761415" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.32928476" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.32928476" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32928476" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32928476" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50073636" side_tool="true" weight="0.32928476" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32928476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -487,89 +575,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/db.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/interfaces/AuthenticatedUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/MessageDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/RegistrationEndpoint.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/JWTService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/TokenController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.2.8.Final/hibernate-core-5.2.8.Final.jar!/org/hibernate/tool/schema/internal/exec/GenerationTargetToDatabase.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-791" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/CORSFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/interfaces/Secured.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -583,44 +601,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/chatapi/authentication/EncryptionServiceTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/authentication/EncryptionServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1217">
-          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+        <state relative-caret-position="596">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/api/AuthenticationControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/CORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="210">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        <state relative-caret-position="195">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/MessageDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/AuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="229">
+          <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/models/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/UserCredentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -629,18 +691,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/DatabaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+        <state relative-caret-position="320">
+          <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/EncryptionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/JWTService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/ChatEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/ResponseWrapper.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="140" column="21" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/base/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/authentication/models/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/chatapi/api/AuthenticationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+        <state relative-caret-position="99">
+          <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -11,6 +11,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 // https://www.javacodegeeks.com/2012/05/secure-password-storage-donts-dos-and.html
+// TODO - General improvement of this class, specifically the security mechanisms
 
 public class EncryptionService {
     public boolean authenticate(String attemptedPassword, byte[] encryptedPassword, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -25,9 +26,7 @@ public class EncryptionService {
     public byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
             // PBKDF2 with SHA-1 as the hashing algorithm. Note that the NIST specifically names SHA-1 as an acceptable hashing algorithm for PBKDF2
             String algorithm = "PBKDF2WithHmacSHA1";
-            // SHA-1 generates 160 bit hashes, so that's what makes sense here
             int derivedKeyLength = 160;
-
             int iterations = 10000;
 
             KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterations, derivedKeyLength);

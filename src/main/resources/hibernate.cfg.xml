@@ -10,7 +10,7 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/flarechat
+			jdbc:mysql://localhost:3306/fuckyou
 		</property>
 		<property name="hibernate.connection.username">
 			root
@@ -23,6 +23,7 @@
 		</property>
 
 		<mapping class="com.chatapi.authentication.models.Token"/>
+		<mapping class="com.chatapi.authentication.models.UserCredentials"/>
 		<mapping class="com.chatapi.authentication.models.User"/>
 		<mapping class="com.chatapi.base.models.Message"/>
 	</session-factory>

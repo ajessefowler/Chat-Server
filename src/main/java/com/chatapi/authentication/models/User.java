@@ -1,6 +1,10 @@
 package com.chatapi.authentication.models;
 
 import com.chatapi.base.models.Message;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.*;
 import java.util.*;
@@ -12,35 +16,36 @@ import java.io.Serializable;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    @JsonIgnore
     private int id;
     private String username;
     private String firstName;
     private String lastName;
     private String email;
-    @Lob
-    private byte[] password;
-    @Lob
-    private byte[] salt;
-    @ElementCollection
-    private List<Message> messages;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
+    private UserCredentials credentials;
+    @OneToOne
+    @JsonSerialize
+    @JsonDeserialize
+    private Token token;
+    /*@OneToMany
+    private List<Message> messages;*/
 
-    public User() {}
+    public User() { }
 
-    public User(String username, byte[] password, byte[] salt) {
+    public User(String username) {
         this.username = username;
-        this.password = password;
-        this.salt = salt;
-        this.messages = new ArrayList<>();
+        //this.messages = new ArrayList<>();
     }
 
-    public User(String username, String firstName, String lastName, String email, byte[] password, byte[] salt) {
+    public User(String username, String firstName, String lastName, String email) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = password;
-        this.salt = salt;
-        this.messages = new ArrayList<>();
+        //this.messages = new ArrayList<>();
     }
 
     public int getId() { return id; }
@@ -65,15 +70,15 @@ public class User implements Serializable {
 
     public void setEmail(String email) { this.email = email; }
 
-    public byte[] getPassword() { return password; }
+    public UserCredentials getCredentials() { return credentials; }
 
-    public void setPassword(byte[] newPassword) { this.password = newPassword; }
+    public void setCredentials(UserCredentials credentials) { this.credentials = credentials; }
 
-    public byte[] getSalt() { return salt; }
+    public Token getToken() { return token; }
 
-    public void setSalt(byte[] salt) { this.salt = salt; }
+    public void setToken(Token token) { this.token = token; }
 
-    public void addMessage(Message message) {
+    /*public void addMessage(Message message) {
         this.messages.add(message);
     }
 
@@ -94,5 +99,5 @@ public class User implements Serializable {
     @Transient
     public List<Message> getMessagesByUsername(String username) {
         return this.messages.stream().filter(message -> message.getOrigin() == username).collect(Collectors.toList());
-    }
+    }*/
 }

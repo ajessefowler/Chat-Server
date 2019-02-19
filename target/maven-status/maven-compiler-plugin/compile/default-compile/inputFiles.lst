@@ -1,6 +1,7 @@
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/MessageDecoder.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/api/CORSFilter.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/ApplicationTest.java
+/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/JWTService.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/api/ChatEndpoint.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/models/Message.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/EncryptionService.java
@@ -12,3 +13,4 @@
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/base/models/Status.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/models/Token.java
 /Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/models/User.java
+/Users/jessefowler/IdeaProjects/Chat-Server/src/main/java/com/chatapi/authentication/models/UserCredentials.java

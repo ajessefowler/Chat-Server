@@ -1,5 +1,10 @@
 package com.chatapi.authentication.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,33 +12,32 @@ import java.io.Serializable;
 @Table( name = "TOKENS" )
 public class Token implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @JsonIgnore
+    private String id;
+    @JsonSerialize
+    @JsonDeserialize
+    @Transient
     private String token;
-    private String user;
-    @Lob
-    private byte[] tokenKey;
+    @OneToOne
+    @JsonIgnore
+    private User user;
 
     public Token() {}
-    public Token(String token, String user, byte[] key) {
+    public Token(String token) {
         this.token = token;
-        this.user = user;
-        this.tokenKey = key;
     }
 
-    public int getId() { return id; }
+    public String getId() { return id; }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(String id) { this.id = id; }
 
     public String getToken() { return token; }
 
     public void setToken(String token) { this.token = token; }
 
-    public String getUser() { return user; }
+    public User getUser() { return user; }
 
-    public void setUser(String user) { this.user = user; }
-
-    public  byte[] getKey() { return tokenKey; }
-
-    public void setKey(byte[] key) { this.tokenKey = key; }
+    public void setUser(User user) { this.user = user; }
 }
