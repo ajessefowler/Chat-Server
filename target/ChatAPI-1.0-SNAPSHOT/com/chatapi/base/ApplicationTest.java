@@ -2,8 +2,11 @@ package com.chatapi.base;
 
 import com.chatapi.api.AuthenticationController;
 import com.chatapi.authentication.EncryptionService;
+import com.chatapi.authentication.models.User;
+import com.chatapi.base.models.Conversation;
 
-import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApplicationTest {
     public static void main(String[] args) {
@@ -11,15 +14,22 @@ public class ApplicationTest {
         EncryptionService encryptService = new EncryptionService();
         AuthenticationController authController = new AuthenticationController();
 
-        //authController.registerUser("admin4", "admin4");
+        authController.registerUser("jesse", "test", "jesse", "fowler", "j@f.com");
 
-        try {
-            Response response = authController.authenticateUser("admin4", "admin4");
+        //System.out.println(dbManager.getUser("jesse").getUsername());
 
-            System.out.println(response.getEntity().toString());
+        /*try {
+            Conversation conversation = new Conversation(users);
+            dbManager.addConversation(conversation);
+
+            user1.addConversation(conversation);
+            user2.addConversation(conversation);
+
+            dbManager.updateUser(user1);
+            dbManager.updateUser(user2);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
         //System.out.println(authController.tokenIsActive("new", jws).getEntity().toString());
     }

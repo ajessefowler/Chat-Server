@@ -24,12 +24,16 @@ public class AuthenticationController {
     @Path("register")
     @Produces("text/plain")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public String registerUser(@FormParam("username") String username, @FormParam("password") String password) {
+    public String registerUser(@FormParam("username") String username,
+                               @FormParam("password") String password,
+                               @FormParam("firstName") String firstName,
+                               @FormParam("lastName") String lastName,
+                               @FormParam("email") String email) {
         try {
             byte[] salt = encryptService.generateSalt();
             byte[] encryptedPassword = encryptService.getEncryptedPassword(password, salt);
 
-            User user = new User(username);
+            User user = new User(username, firstName, lastName, email);
             UserCredentials credentials = new UserCredentials(encryptedPassword, salt);
             user.setCredentials(credentials);
             credentials.setUser(user);

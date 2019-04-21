@@ -1,14 +1,13 @@
 package com.chatapi.authentication.models;
 
+import com.chatapi.base.models.Conversation;
 import com.chatapi.base.models.Message;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.*;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.io.Serializable;
 
 @Entity
@@ -30,14 +29,25 @@ public class User implements Serializable {
     @JsonSerialize
     @JsonDeserialize
     private Token token;
-    /*@OneToMany
-    private List<Message> messages;*/
+    @JsonIgnore
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "USER_CONVERSATIONS",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "conversation_id") }
+    )
+    private List<Conversation> conversations;
+    @JsonIgnore
+    @OneToMany(mappedBy = "origin")
+    private List<Message> sentMessages;
 
-    public User() { }
+    public User() {
+        this.conversations = new ArrayList<>();
+    }
 
     public User(String username) {
         this.username = username;
-        //this.messages = new ArrayList<>();
+        this.conversations = new ArrayList<>();
     }
 
     public User(String username, String firstName, String lastName, String email) {
@@ -45,7 +55,7 @@ public class User implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        //this.messages = new ArrayList<>();
+        this.conversations = new ArrayList<>();
     }
 
     public int getId() { return id; }
@@ -78,26 +88,15 @@ public class User implements Serializable {
 
     public void setToken(Token token) { this.token = token; }
 
-    /*public void addMessage(Message message) {
-        this.messages.add(message);
-    }
+    public List<Conversation> getConversations() { return conversations; }
 
-    @Transient
-    public Map<String, List<Message>> getAllMessages() {
-        Map<String, List<Message>> messagesByUser = new HashMap<>();
+    public void setConversations(List<Conversation> conversations) { this.conversations = conversations; }
 
-        for (Message message : this.messages) {
-            if (!messagesByUser.containsKey(message.getOrigin())) {
-                messagesByUser.put(message.getOrigin(), new ArrayList<>());
-            }
-            messagesByUser.get(message.getOrigin()).add(message);
-        }
+    public void addConversation(Conversation conversation) { this.conversations.add(conversation); }
 
-        return messagesByUser;
-    }
+    public List<Message> getSentMessages() { return sentMessages; }
 
-    @Transient
-    public List<Message> getMessagesByUsername(String username) {
-        return this.messages.stream().filter(message -> message.getOrigin() == username).collect(Collectors.toList());
-    }*/
+    public void setSentMessages(List<Message> sentMessages) { this.sentMessages = sentMessages; }
+
+    public void addSentMessage(Message message) { this.sentMessages.add(message); }
 }

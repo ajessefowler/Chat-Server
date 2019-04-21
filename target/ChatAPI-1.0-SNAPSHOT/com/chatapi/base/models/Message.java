@@ -1,8 +1,14 @@
 package com.chatapi.base.models;
 
+import com.chatapi.authentication.models.User;
+import com.chatapi.base.DatabaseService;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table( name = "MESSAGES" )
@@ -11,21 +17,46 @@ public class Message implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String type;
-    private String origin;
-    private String recipient;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User origin;
+    @ManyToOne
+    @JoinColumn(name = "conversation_id")
+    private Conversation conversation;
     @Column(name = "timestamp", columnDefinition = "DATETIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
     private String content;
     @Enumerated(EnumType.STRING)
     private Status status;
+    @Transient
+    private DatabaseService dbService = new DatabaseService();
 
-    public Message() {}
-    public Message(String type, String origin, String recipient, String content) {
+    public Message() {
+        this.timestamp = new Date();
+        this.status = Status.CREATED;
+    }
+
+    public Message(String type, String content) {
         this.type = type;
-        this.origin = origin;
-        this.recipient = recipient;
         this.content = content;
+        this.timestamp = new Date();
+        this.status = Status.CREATED;
+    }
+
+    public Message(String type, String origin, String content) {
+        this.type = type;
+        this.origin = dbService.getUser(origin);
+        this.content = content;
+        this.timestamp = new Date();
+        this.status = Status.CREATED;
+    }
+
+    public Message(String type, String origin, String content, int conversationId) {
+        this.type = type;
+        this.origin = dbService.getUser(origin);
+        this.content = content;
+        this.conversation = dbService.getConversation(conversationId);
         this.timestamp = new Date();
         this.status = Status.CREATED;
     }
@@ -38,15 +69,13 @@ public class Message implements Serializable {
 
     public void setType(String type) { this.type = type; }
 
-    public String getOrigin() {
-        return origin;
-    }
+    public User getOrigin() { return origin; }
 
-    public void setOrigin(String origin) { this.origin = origin; }
+    public void setOrigin(User origin) { this.origin = origin; }
 
-    public String getRecipient() { return recipient; }
+    public Conversation getConversation() { return conversation; }
 
-    public void setRecipient(String recipient) { this.recipient = recipient; }
+    public void setConversation(Conversation conversation) { this.conversation = conversation; }
 
     public Date getTimestamp() {
         return timestamp;

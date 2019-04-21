@@ -10,6 +10,8 @@ import com.google.gson.*;
 public class MessageDecoder implements Decoder.Text<Message> {
     private static Gson gson = new Gson();
 
+    // TODO - Use Jackson to select proper constructor that correctly adds Conversation to message from conversationId
+
     @Override
     public Message decode(String s) throws DecodeException {
         return gson.fromJson(s, Message.class);

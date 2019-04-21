@@ -12,6 +12,8 @@ import java.security.Key;
 
 public class JWTService {
     private DatabaseService dbService = new DatabaseService();
+
+    // TODO - ASAP - Read from file for consistency
     private Key key = generateSecretKey();
 
     public Token createJWS(String username) {

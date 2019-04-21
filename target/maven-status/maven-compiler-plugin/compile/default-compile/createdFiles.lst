@@ -1,3 +1,4 @@
+com/chatapi/base/models/Conversation.class
 com/chatapi/authentication/models/User.class
 com/chatapi/api/AuthenticationController.class
 com/chatapi/authentication/models/Token.class
@@ -5,6 +6,7 @@ com/chatapi/base/models/Status.class
 com/chatapi/base/ApplicationTest.class
 com/chatapi/authentication/AuthenticationFilter.class
 com/chatapi/authentication/interfaces/Secured.class
+com/chatapi/api/ConversationController.class
 com/chatapi/api/ChatEndpoint.class
 com/chatapi/authentication/JWTService.class
 com/chatapi/base/MessageEncoder.class

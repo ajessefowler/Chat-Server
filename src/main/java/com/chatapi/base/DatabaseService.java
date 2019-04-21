@@ -3,6 +3,7 @@ package com.chatapi.base;
 import com.chatapi.authentication.models.Token;
 import com.chatapi.authentication.models.User;
 import com.chatapi.authentication.models.UserCredentials;
+import com.chatapi.base.models.Conversation;
 import com.chatapi.base.models.Message;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,7 +18,7 @@ import javax.persistence.criteria.*;
 public class DatabaseService {
     public static SessionFactory getSessionFactory() {
         Configuration configuration = new Configuration().configure();
-        configuration.addAnnotatedClass(UserCredentials.class).addAnnotatedClass(User.class).addAnnotatedClass(Message.class).addAnnotatedClass(Token.class);
+        configuration.addAnnotatedClass(UserCredentials.class).addAnnotatedClass(User.class).addAnnotatedClass(Conversation.class).addAnnotatedClass(Message.class).addAnnotatedClass(Token.class);
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
         SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
         return sessionFactory;
@@ -31,6 +32,17 @@ public class DatabaseService {
         Predicate condition = cb.equal(root.get("username"), username);
         cr.select(root).where(condition);
         Query<User> query = session.createQuery(cr);
+        return query.setMaxResults(1).uniqueResult();
+    }
+
+    public Conversation getConversation(int groupId) {
+        Session session = getSessionFactory().openSession();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Conversation> cr = cb.createQuery(Conversation.class);
+        Root<Conversation> root = cr.from(Conversation.class);
+        Predicate condition = cb.equal(root.get("id"), groupId);
+        cr.select(root).where(condition);
+        Query<Conversation> query = session.createQuery(cr);
         return query.setMaxResults(1).uniqueResult();
     }
 
@@ -80,6 +92,24 @@ public class DatabaseService {
         deleteUser(user);
     }
 
+    public void addConversation(Conversation conversation) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        session.persist(conversation);
+        session.getTransaction().commit();
+        session.close();
+        System.out.println("Created new conversation with id: " + conversation.getId());
+    }
+
+    public void updateConversation(Conversation conversation) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        session.merge(conversation);
+        session.getTransaction().commit();
+        session.close();
+        System.out.println("Updated conversation with id: " + conversation.getId());
+    }
+
     public void addToken(Token token) {
         User user = token.getUser();
         String username = user.getUsername();
@@ -115,6 +145,6 @@ public class DatabaseService {
         session.persist(message);
         session.getTransaction().commit();
         session.close();
-        System.out.println("Created message to " + message.getRecipient() + ": " + message.getContent());
+        //System.out.println("Created message to group " + message.getConversation().getId() + ": " + message.getContent());
     }
 }

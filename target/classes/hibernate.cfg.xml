@@ -10,7 +10,7 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/fuckyou
+			jdbc:mysql://localhost:3306/flarechat10?useLegacyDatetimeCode=false&amp;serverTimezone=UTC
 		</property>
 		<property name="hibernate.connection.username">
 			root
@@ -26,5 +26,6 @@
 		<mapping class="com.chatapi.authentication.models.UserCredentials"/>
 		<mapping class="com.chatapi.authentication.models.User"/>
 		<mapping class="com.chatapi.base.models.Message"/>
+		<mapping class="com.chatapi.base.models.Conversation"/>
 	</session-factory>
 </hibernate-configuration>
